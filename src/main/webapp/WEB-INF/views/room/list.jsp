@@ -9,10 +9,9 @@
 </head>
 <body>
 	<h1>list.jsp</h1>
-	<img alt="" src="/kr.mycom.ojo/image/01.jpg">
+	
 	<c:forEach items="${list}" var="Room_infoVo">
-		<%-- <img alt="" src="../image/${Room_infoVo.rprofile }.jpg"> --%>
-		
+		<img alt="" src="../image/${Room_infoVo.rprofile }.jpg">
 	</c:forEach>
 
 	<div class="box-footer">
