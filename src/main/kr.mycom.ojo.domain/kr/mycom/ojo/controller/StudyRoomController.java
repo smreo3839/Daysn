@@ -23,21 +23,23 @@ public class StudyRoomController {
 	@Inject
 	private RoomService service;
 
-	@RequestMapping(value = "/list", method = RequestMethod.GET) public void
-	  listPage(@ModelAttribute("cri") SearchCriteria cri,Model model) throws
-	  Exception {// @ModelAttribute
-	  
-	  logger.info(cri.toString());
-	  
-	  // model.addAttribute("list", service.listCriteria(cri));
-		model.addAttribute("list", service.listSearchCriteria(cri));/* 게시판 특정 수 만큼 셀렉트 */
-	  
-	  PageMaker pageMaker = new PageMaker(); pageMaker.setCri(cri);
-	  
-	  // pageMaker.setTotalCount(service.listCountCriteria(cri));
-	  pageMaker.setTotalCount(service.listSearchCount(cri));
-	  
-	  model.addAttribute("pageMaker", pageMaker); }
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String listPage(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {// @ModelAttribute
+
+		logger.info(cri.toString());
+		
+		// model.addAttribute("list", service.listCriteria(cri));
+		model.addAttribute("list", service.listSearchCriteria(cri));/* 寃뚯떆�뙋 �듅�젙 �닔 留뚰겮 ���젆�듃 */
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+
+		// pageMaker.setTotalCount(service.listCountCriteria(cri));
+		pageMaker.setTotalCount(service.listSearchCount(cri));
+
+		model.addAttribute("pageMaker", pageMaker);
+		return "list";
+	}
 	/*
 	 * @RequestMapping(value = "/list", method = RequestMethod.GET) public void
 	 * listPage(Model model) throws Exception {// @ModelAttribute

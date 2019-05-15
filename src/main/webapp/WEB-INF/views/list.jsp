@@ -6,16 +6,51 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<style type="text/css">
+#cloth {
+	float: left;
+	width: 25%;
+	height: 470px;
+}
+
+#h2 {
+	text-align: center;
+}
+
+hr {
+	margin-right: 150px;
+}
+
+#img {
+	margin-right: 5px;
+}
+
+#img2 {
+	width: 310px;
+}
+
+#box-footer {
+	clear: both;
+}
+</style>
 </head>
 <body>
 	<h1>list.jsp</h1>
-	
-	<c:forEach items="${list}" var="Room_infoVo">
+
+	<%-- <%-- <c:forEach items="${list}" var="Room_infoVo">
 		<img alt="" src="../image/${Room_infoVo.rprofile }.jpg">
-	</c:forEach>
+	</c:forEach> --%>
+	<div>
+		<c:forEach var="Room_infoVo" items="${list}">
+			<div id="cloth">
+				<div id="img">
+					<img id="img2" alt="" src="/resources/image/01.jpg">
+				</div>
+			</div>
+		</c:forEach>
+	</div>
 
-	<div class="box-footer">
-
+	<div class="box-footer" style="clear: both;">
 		<div class="text-center">
 			<ul class="pagination">
 
@@ -39,7 +74,6 @@
 
 			</ul>
 		</div>
-
 	</div>
 </body>
 </html>
