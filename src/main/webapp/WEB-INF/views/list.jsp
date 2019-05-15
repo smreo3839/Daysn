@@ -10,7 +10,7 @@
 #cloth {
 	float: left;
 	width: 25%;
-	height: 470px;
+	height: 350px;
 }
 
 #h2 {
@@ -44,7 +44,7 @@ hr {
 		<c:forEach var="Room_infoVo" items="${list}">
 			<div id="cloth">
 				<div id="img">
-					<img id="img2" alt="" src="/resources/image/01.jpg">
+					<img id="img2" alt="" src="/image/${Room_infoVo.rprofile}.jpg">
 				</div>
 			</div>
 		</c:forEach>
